@@ -11,5 +11,16 @@ pipeline {
                             bat 'gradle sonarqube'
                      }
          }
+         stage('clean') { 
+                     steps { 
+                            bat 'gradlew clean'
+                            bat 'dir'
+                     }
+         }
+         stage('Release') { 
+                     steps { 
+                            bat 'gradlew AssembleRelease'
+                     }
+         }
    }
 }
