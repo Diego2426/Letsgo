@@ -1,0 +1,15 @@
+pipeline {
+   agent any
+   //Funcion para monitorear cambios dentro del repositorio
+   /*triggers {
+        pollSCM('* * * * *')
+   }*/
+   
+   stages { 
+          stage('Sonar') { 
+                     steps { 
+                            bat 'gradle sonarqube'
+                     }
+         }
+   }
+}
