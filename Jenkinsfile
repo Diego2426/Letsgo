@@ -33,7 +33,7 @@ pipeline {
     //Funcion dentro de gradle para realizar escaneo sin necesidad de jenkins
          stage('Sonar') { 
                      steps { 
-                            sh 'gradle sonarqube'
+                            bat 'gradle sonarqube'
                      }
          }
    }
