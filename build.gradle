@@ -1,0 +1,52 @@
+plugins {
+    id "org.sonarqube" version "2.7"
+}
+
+description = 'Example of SonarQube Scanner for Graddle Usage'
+version = '1.0'
+
+sonarqube {
+    properties {
+        property "sonar.tests", "/."
+        }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'jacoco'
+apply plugin: org.sonarqube.gradle.SonarQubePlugin
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.0"
+	compile 'com.google.guava:guava:21.0'
+    	testCompile 'junit:junit:4.12'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+mainClassName = 'App'
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
