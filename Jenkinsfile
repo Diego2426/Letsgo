@@ -6,7 +6,7 @@ pipeline {
    }*/
    
    stages { 
-          /*stage('clean') { 
+          stage('clean') { 
                      steps { 
                             bat 'gradlew clean'
                             bat 'dir'
@@ -22,7 +22,7 @@ pipeline {
                             bat 'gradlew AssembleRelease'
                      }
                      //Funcion para enviar por correo
-                     post {
+                     /*post {
                         success {
                             echo 'AWESOME SUCCESS!'
                             emailext body: 'New Update Available', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'New Update!'
@@ -31,10 +31,10 @@ pipeline {
          }*/
     }
     //Funcion dentro de gradle para realizar escaneo sin necesidad de jenkins
-         stage('Sonar') { 
+         /*stage('Sonar') { 
                      steps { 
                             bat 'gradle sonarqube'
                      }
-         }
+         }*/
    }
 }
