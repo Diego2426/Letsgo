@@ -6,11 +6,11 @@ pipeline {
    }*/
    
    stages { 
-          stage('Sonar') { 
+          /*stage('Sonar') { 
                      steps { 
                             bat 'gradle sonarqube'
                      }
-         }
+         }*/
          stage('clean') { 
                      steps { 
                             bat 'gradlew clean'
