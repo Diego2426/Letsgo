@@ -22,7 +22,7 @@ pipeline {
                             bat 'gradlew AssembleRelease'
                      }
                      //Funcion para enviar por correo
-                     /*post {
+                     post {
                         success {
                             echo 'AWESOME SUCCESS!'
                             emailext body: 'New Update Available', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'New Update!'
