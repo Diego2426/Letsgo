@@ -16,10 +16,10 @@ pipeline {
                             bat 'gradlew AssembleRelease'
                      }
          }
-         /*stage('Sonar') { 
+         stage('Sonar') { 
                      steps { 
                             bat 'gradle sonarqube'
                      }
-         }*/
+         }
    }
 }
