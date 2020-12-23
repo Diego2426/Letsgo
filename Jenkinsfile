@@ -6,7 +6,7 @@ pipeline {
    }*/
    
    stages { 
-          stage('clean') { 
+          /*stage('clean') { 
                      steps { 
                             bat 'gradlew clean'
                             bat 'dir'
@@ -16,7 +16,7 @@ pipeline {
                      steps { 
                             bat 'gradlew build'
                      }
-         }
+         }*/
          stage('Release') { 
                      steps { 
                             bat 'gradlew AssembleRelease'
