@@ -6,7 +6,7 @@ pipeline {
    }*/
    
    stages { 
-         stage('clean') { 
+          /*stage('clean') { 
                      steps { 
                             bat 'gradlew clean'
                             bat 'dir'
@@ -31,10 +31,10 @@ pipeline {
          }*/
     }
     //Funcion dentro de gradle para realizar escaneo sin necesidad de jenkins
-         /*stage('Sonar') { 
+         stage('Sonar') { 
                      steps { 
                             sh 'gradle sonarqube'
                      }
-         }*/
+         }
    }
 }
